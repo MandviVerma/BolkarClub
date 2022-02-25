@@ -126,13 +126,27 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="100dp"
+        <ImageView
+            android:id="@+id/mic"
+            android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/blue_bg"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/white_circle"
+            android:elevation="2dp"
+            android:padding="2dp"
+            android:src="@drawable/iv_mic_off"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clInvite"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/blue_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/mic"
             app:layout_constraintTop_toTopOf="parent"
 
             >
@@ -143,6 +157,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="10dp"
                 android:padding="6dp"
+
                 android:src="@drawable/iv_add"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
