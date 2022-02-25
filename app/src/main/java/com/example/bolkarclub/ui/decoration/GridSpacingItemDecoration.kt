@@ -1,4 +1,4 @@
-package com.example.bolkarclub
+package com.example.bolkarclub.ui.decoration
 
 import android.graphics.Rect
 import android.view.View

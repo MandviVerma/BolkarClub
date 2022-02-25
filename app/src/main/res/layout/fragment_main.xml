@@ -9,14 +9,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@id/view"
+        app:layout_constraintBottom_toBottomOf="@id/guideLine"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="14dp"
-            app:cardBackgroundColor="#F8FDFF"
+            app:cardBackgroundColor="@color/lightBlue"
             app:cardCornerRadius="10dp"
             app:cardElevation="4dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,8 +40,8 @@
 
     <ProgressBar
         android:id="@+id/progress"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,7 +49,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/view"
+        android:id="@+id/guideLine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -61,10 +61,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
-        android:text="Other users who have joined."
+        android:text="Other users who have joined"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view" />
+        app:layout_constraintTop_toBottomOf="@id/guideLine" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMember"
@@ -80,7 +80,7 @@
         android:id="@+id/viewLine"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="#d6d6d6"
+        android:background="@color/borderGrey"
         app:layout_constraintBottom_toTopOf="@id/clBottom" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -118,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
                 android:text="Exit"
-                android:textColor="#ff0000"
+                android:textColor="@color/redColor"
                 android:textSize="14sp"
                 android:textStyle="italic"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -168,7 +168,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
                 android:text="Invite"
-                android:textColor="#6E6D6D"
+                android:textColor="@color/greyBlack"
                 android:textSize="14sp"
                 android:textStyle="italic"
                 app:layout_constraintBottom_toBottomOf="parent"

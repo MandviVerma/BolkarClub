@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.bolkarclub.GridSpacingItemDecoration
+import com.example.bolkarclub.ui.decoration.GridSpacingItemDecoration
 import com.example.bolkarclub.R
 import com.example.bolkarclub.model.CategoryType
 import com.example.bolkarclub.model.DataModel
