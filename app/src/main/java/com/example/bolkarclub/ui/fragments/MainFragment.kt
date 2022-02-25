@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -23,11 +24,12 @@ import com.example.bolkarclub.viewmodel.MainViewModel
 
 class MainFragment : Fragment(), MemberAdapter.OnItemClickListener,
     MainAdapter.OnItemClickListener {
-    lateinit var  progress: ProgressBar
+    lateinit var progress: ProgressBar
     lateinit var dataHostModel: DataModel
     var mainResponse: MainResponse? = null
     var newDataList = ArrayList<DataModel>()
     var newMemberList = ArrayList<DataModel>()
+    lateinit var exit: ConstraintLayout
 
 
     lateinit var mainAdapter: MainAdapter
@@ -52,7 +54,10 @@ class MainFragment : Fragment(), MemberAdapter.OnItemClickListener,
         super.onViewCreated(view, savedInstanceState)
         mainFragmentViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         progress = requireActivity().findViewById<ProgressBar>(R.id.progress)
-
+        exit = requireActivity().findViewById(R.id.clExit)
+        exit.setOnClickListener {
+            activity?.onBackPressed()
+        }
 
         observeLiveData()
 
@@ -96,7 +101,7 @@ class MainFragment : Fragment(), MemberAdapter.OnItemClickListener,
         mainFragmentViewModel.mainResponse.observe(viewLifecycleOwner, { mainResponse ->
 
             mainResponse?.let {
-                 dataHostModel = DataModel(
+                dataHostModel = DataModel(
                     it.data.host.n,
                     CategoryType.Host,
                     "https://cdn1.bolkarapp.com/uploads/dp/" + it.data.host.u + ".jpg",
@@ -136,12 +141,11 @@ class MainFragment : Fragment(), MemberAdapter.OnItemClickListener,
             setUpRecyclerView()
             mainAdapter.notifyDataSetChanged()
 
-            (activity as MainActivity?)?.fragmentMethod(newDataList.size,dataHostModel)
+            (activity as MainActivity?)?.fragmentMethod(newDataList.size, dataHostModel)
 
             setUpMemberRecyclerView()
             memberAdapter.notifyDataSetChanged()
-            progress.visibility=View.GONE
-
+            progress.visibility = View.GONE
 
 
         })

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.bumptech.glide.Glide
 import com.example.bolkarclub.R
 import com.example.bolkarclub.model.DataModel
@@ -15,6 +16,7 @@ import de.hdodenhof.circleimageview.CircleImageView
 class MainActivity : AppCompatActivity() {
     lateinit var tvMainMember: TextView
     lateinit var ivBack: ImageView
+
 
     lateinit var ivProfile: CircleImageView
 
@@ -26,9 +28,11 @@ class MainActivity : AppCompatActivity() {
         ivProfile = findViewById(R.id.profile_image)
         ivBack = findViewById(R.id.ivBack)
 
+
         ivBack.setOnClickListener {
             super.onBackPressed()
         }
+
 
         val mainFragment = MainFragment()
         supportFragmentManager.beginTransaction().replace(R.id.frameLayout, mainFragment)
